@@ -1,0 +1,254 @@
+:root {
+    --red: hsl(4, 100%, 67%);
+    --blue-800: hsl(234, 29%, 20%);
+    --blue-700: hsl(235, 18%, 26%);
+    --grey: hsl(0, 0%,58%);
+    --white: hsl(0, 0%, 100%);
+}
+
+@font-face {
+    font-family: 'myFont';
+    src: url('../assets/fonts/Roboto-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'myFont';
+    src: url('../assets/fonts/Roboto-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.first-section {
+    background-color: var(--blue-700);
+    width: 100%;
+}
+
+main.main {
+    background: var(--white);
+    font-family: 'myFont';
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+}
+
+.article-section {
+    padding: 30px;
+}
+
+.sign-up-image img {
+    display: inline-block;
+    width: 100%;
+}
+
+header.heading {
+    font-size: 2.5rem;
+    font-family: 'myFont';
+    font-weight: 700;
+    color: var(--blue-800);
+}
+
+.updates {
+    margin: 40px 0;
+}
+
+.topic-text, .icon-success-text {
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+.icon-success-text {
+    margin: 5px 0;
+}
+
+.update1, .update2, .update3 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.icon-success-img>img {
+    width: 20px;
+    height: 20px;
+    margin-right: 20px;
+}
+
+.email-label-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+label.email {
+    font-weight: bold;
+}
+
+.email-warning-text {
+    color: var(--red);
+}
+
+input {
+    padding: 20px 10px;
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+    border: solid 1px var(--grey);
+    margin: 5px 0 15px;
+    box-sizing: border-box;
+    font-family: 'myFont';
+    font-size: 1rem;
+}
+
+input:focus {
+    outline: 1px solid var(--blue-800);
+    cursor: pointer;
+}
+
+.suscribe-btn {
+    width: 100%;
+    padding: 20px 10px;
+    font-weight: 700;
+    font-size: 1rem;
+    background: var(--blue-800);
+    color: var(--white);
+    border-radius: 10px;
+    margin-top: 15px;
+    border: none;
+}
+
+.suscribe-btn:hover, .dismiss-btn:hover {
+    cursor: pointer;
+    background: linear-gradient(95deg, var(--red) 70%, orange);
+    position: relative;
+    z-index: 1;
+}
+
+.suscribe-btn:hover::after, .dismiss-btn:hover::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(95deg, var(--red) 70%, orange);
+    filter: blur(6px);
+    z-index: -1;
+}
+  
+
+.inactive {
+    display: none !important;
+}
+
+.confirm-message-section {
+    font-family: 'myFont';
+    padding: 120px 30px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 100vh;
+    box-sizing: border-box;
+    background: var(--white);
+}
+
+.thank-you-message {
+    font-size: 3.2rem;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.confirmation-text {
+    line-height: 1.5;
+    width: 100%;
+}
+
+span#email-input {
+    font-weight: 700;
+}
+
+.dismiss-btn {
+    width: 100%;
+    font-family: 'myFont';
+    padding: 20px 10px;
+    font-weight: 700;
+    font-size: 1rem;
+    background: var(--blue-800);
+    color: var(--white);
+    border-radius: 10px;
+    margin-top: auto;
+    align-items: baseline;
+    border: none;
+}
+
+
+@media screen and (min-width: 800px) {
+
+    .first-section {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    main.main {
+        max-width: 1000px;
+        margin: auto;
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+        align-items: center;
+        height: fit-content;
+        padding: 25px;
+        border-radius: 30px;
+    }
+
+    header.heading {
+        margin-bottom: 0;
+    }
+
+    .sign-up-image {
+        flex: 1;
+        order: 1;
+    }
+
+    .updates {
+        margin: 30px 0;
+    }
+
+    .update1, .update2, .update3 {
+        margin-bottom: 0;
+    }
+
+    .article-section {
+        flex: 1;
+    }
+
+    .confirm-message-section {
+        width: 500px;
+        margin-right: auto;
+        margin-left: auto;
+        background: var(--white);
+        height: 500px;
+        border-radius: 20px;
+        padding: 60px;
+        height: fit-content;
+        box-sizing: border-box;
+    }
+
+    .thank-you-message {
+        margin-bottom: 5px;
+    }
+
+    .confirmation-text {
+        margin-bottom: 20px;
+    }
+
+}
