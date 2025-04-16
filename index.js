@@ -5,17 +5,20 @@ const main = document.querySelector('.main');
 const confirmSection = document.querySelector('.confirm-message-section')
 const dismissBtn = document.querySelector('.dismiss-btn');
 const emailInput = document.getElementById('email-input');
+const form = document.querySelector('form');
+console.log(form);
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 
-suscribeBtn.addEventListener('click', function (e) {
+form.addEventListener('submit', function (e) {
     e.preventDefault();
     emailInput.textContent = email.value + '.';
     if (!emailRegex.test(email.value) || email.value === '') {
         emailWarning.classList.remove('inactive');
         email.style.backgroundColor = 'grey';
         console.log(email.style.backgroundColor);
+        return;
     }
     if (!main.classList.contains('inactive')) {
         main.classList.add('inactive');
